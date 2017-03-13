@@ -1,11 +1,17 @@
 pipeline:
   docker:
     image: plugins/docker
+    force_tag: true
+
+publish:
+  docker:
     repo: registry.liskl.com/tstllc-base
     tag:
-      - ${DRONE_BRANCH}-latest
-      - ${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}
-    force_tag: true
+      - latest
+#      - ${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}
+    when:
+      branch: master
+
 #    storage_driver: overlay
 #  ecr:
 #    image: plugins/ecr
