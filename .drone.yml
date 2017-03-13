@@ -7,7 +7,7 @@ pipeline:
       - ${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}
     when:
       branch:
-        exclude: [ release/* ]
+        exclude: [ master, release/* ]
     force_tag: true
 
 publish:
