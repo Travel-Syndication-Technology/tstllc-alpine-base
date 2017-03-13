@@ -1,7 +1,7 @@
 pipeline:
   docker:
     image: plugins/docker
-    repo: registry.liskl.com/tstllc-alpine-base
+    repo: registry.liskl.com/tstllc/alpine-base
     tag::
 #      - ${DRONE_BRANCH}-latest
 #      - ${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}
@@ -9,7 +9,7 @@ pipeline:
 
 publish:
   docker:
-    repo: registry.liskl.com/tstllc-alpine-base
+    repo: registry.liskl.com/tstllc/alpine-base
     tag:
       - latest
     when:
@@ -18,7 +18,7 @@ publish:
 
 publish:
   docker:
-    repo: registry.liskl.com/tstllc-alpine-base
+    repo: registry.liskl.com/tstllc/alpine-base
     tag:
       - ${DRONE_BRANCH}-latest
       - ${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}
