@@ -3,7 +3,7 @@ pipeline:
     image: plugins/docker
     repo: registry.liskl.com/tstllc-base
     tag:
-      - ${DRONE_BRANCH}-latest}
+      - ${DRONE_BRANCH}-latest
       - ${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}
     force_tag: true
 #    storage_driver: overlay
