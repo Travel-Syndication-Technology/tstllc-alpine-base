@@ -1,6 +1,13 @@
 pipeline:
   docker:
     image: plugins/docker
+    repo: registry.liskl.com/tstllc-base
+    tag:
+      - ${DRONE_BRANCH}-latest
+      - ${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}
+    when:
+      branch:
+        exclude: [ release/* ]
     force_tag: true
 
 publish:
@@ -8,9 +15,9 @@ publish:
     repo: registry.liskl.com/tstllc-base
     tag:
       - latest
-#      - ${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}
     when:
-      branch: master
+      branch:
+        include: [ master, release/* ]
 
 #    storage_driver: overlay
 #  ecr:
