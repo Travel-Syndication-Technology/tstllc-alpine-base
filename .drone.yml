@@ -6,7 +6,7 @@ pipeline:
       - ${DRONE_BRANCH}:latest}
       - ${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}
     force_tag: true
-    storage_driver: overlay
+#    storage_driver: overlay
 #  ecr:
 #    image: plugins/ecr
 #    access_key: ${AWS_ECR_ID}
