@@ -1,7 +1,7 @@
 FROM scratch
 
-# DevOps Team
-MAINTAINER Loren Lisk <loren.lisk@tstllc.net>
+# Dev-Ops Team
+MAINTAINER dl_team_devops@tstllc.net
 
 ENV alpine_version 3.5
 
