@@ -2,12 +2,9 @@ pipeline:
   docker:
     image: plugins/docker
     repo: registry.liskl.com/tstllc-alpine-base
-    tag:
-      - ${DRONE_BRANCH}-latest
-      - ${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}
-    when:
-      branch:
-        exclude: [ master, release/* ]
+    tag::
+#      - ${DRONE_BRANCH}-latest
+#      - ${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}
     force_tag: true
 
 publish:
@@ -18,6 +15,16 @@ publish:
     when:
       branch:
         include: [ master, release/* ]
+
+publish:
+  docker:
+    repo: registry.liskl.com/tstllc-alpine-base
+    tag:
+      - ${DRONE_BRANCH}-latest
+      - ${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}
+    when:
+      branch:
+        exclude: [ master ]
 
 #    storage_driver: overlay
 #  ecr:
