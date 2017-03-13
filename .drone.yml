@@ -1,7 +1,7 @@
 pipeline:
   docker:
     image: plugins/docker
-    repo: registry.liskl.com/tstllc/base
+    repo: registry.liskl.com/tstllc-base
     tag:
       - ${DRONE_BRANCH}-latest}
       - ${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}
