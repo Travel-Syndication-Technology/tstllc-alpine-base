@@ -5,6 +5,7 @@ pipeline:
     username: ${REPO_USERNAME}
     password: ${REPO_PASSWORD}
     email: ${REPO_EMAILADDR}
+    registry: registry.tstllc.net
 #    tag:
 #      - ${DRONE_BRANCH}-latest
 #      - ${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}
