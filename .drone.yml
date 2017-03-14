@@ -2,17 +2,17 @@ pipeline:
   docker:
     image: plugins/docker
     repo: registry.tstllc.net/llisk/alpine-base
-    username: ${REPO_USERNAME}
-    password: ${REPO_PASSWORD}
-    email: ${REPO_EMAILADDR}
-    tag:
-      - ${DRONE_BRANCH}-latest
-      - ${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}
-    force_tag: true
+#    tag:
+#      - ${DRONE_BRANCH}-latest
+#      - ${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}
+#    force_tag: true
 
 publish:
   docker:
     repo: registry.tstllc.net/llisk/alpine-base
+    username: ${REPO_USERNAME}
+    password: ${REPO_PASSWORD}
+    email: ${REPO_EMAILADDR}
     tag:
       - latest
     when:
@@ -22,6 +22,9 @@ publish:
 publish:
   docker:
     repo: registry.tstllc.net/llisk/alpine-base
+    username: ${REPO_USERNAME}
+    password: ${REPO_PASSWORD}
+    email: ${REPO_EMAILADDR}
     tag:
       - ${DRONE_BRANCH}-latest
       - ${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}
