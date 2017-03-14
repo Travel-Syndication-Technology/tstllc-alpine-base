@@ -1,7 +1,7 @@
 pipeline:
   docker:
     image: plugins/docker
-    repo: registry.tstllc.net/llisk/alpine-base
+#    repo: registry.tstllc.net/llisk/alpine-base
 #    tag:
 #      - ${DRONE_BRANCH}-latest
 #      - ${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}
@@ -31,11 +31,3 @@ publish:
     when:
       branch:
         exclude: [ master ]
-
-#    storage_driver: overlay
-#  ecr:
-#    image: plugins/ecr
-#    access_key: ${AWS_ECR_ID}
-#    secret_key: ${AWS_ECR_KEY}
-#    region: us-east-1
-#    repo: ${AWS_ECR_REPO}
