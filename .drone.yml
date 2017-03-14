@@ -2,6 +2,9 @@ pipeline:
   docker:
     image: plugins/docker
     repo: registry.liskl.com/tstllc/alpine-base
+    username: ${REPO_USERNAME}
+    password: ${REPO_PASSWORD}
+    email: ${REPO_EMAILADDR}
     tag::
 #      - ${DRONE_BRANCH}-latest
 #      - ${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}
