@@ -8,6 +8,10 @@ pipeline:
     registry: registry.tstllc.net
   docker:
     repo: registry.tstllc.net/alpine/base
+    username: ${REPO_USERNAME}
+    password: ${REPO_PASSWORD}
+    email: ${REPO_EMAILADDR}
+    registry: registry.tstllc.net
     tag:
       - latest
     when:
@@ -15,6 +19,10 @@ pipeline:
         include: [ master, release/* ]
   docker:
     repo: registry.tstllc.net/alpine/base
+    username: ${REPO_USERNAME}
+    password: ${REPO_PASSWORD}
+    email: ${REPO_EMAILADDR}
+    registry: registry.tstllc.net
     tag:
       - ${DRONE_BRANCH}-latest
       - ${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}
