@@ -6,6 +6,8 @@ pipeline:
     password: ${REPO_PASSWORD}
     email: ${REPO_EMAILADDR}
     registry: registry.tstllc.net
+    storage_driver: overlay
+
 publish:
   docker:
     repo: registry.tstllc.net/alpine/base
@@ -13,6 +15,7 @@ publish:
     password: ${REPO_PASSWORD}
     email: ${REPO_EMAILADDR}
     registry: registry.tstllc.net
+    storage_driver: overlay
     tag:
       - latest
     when:
@@ -25,6 +28,7 @@ publish:
     password: ${REPO_PASSWORD}
     email: ${REPO_EMAILADDR}
     registry: registry.tstllc.net
+    storage_driver: overlay
     tag:
       - ${DRONE_BRANCH}-latest
       - ${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}
