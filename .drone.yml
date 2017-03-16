@@ -6,6 +6,7 @@ pipeline:
     password: ${REPO_PASSWORD}
     email: ${REPO_EMAILADDR}
     registry: registry.tstllc.net
+publish:
   docker:
     repo: registry.tstllc.net/alpine/base
     username: ${REPO_USERNAME}
@@ -17,6 +18,7 @@ pipeline:
     when:
       branch:
         include: [ master, release/* ]
+publish:
   docker:
     repo: registry.tstllc.net/alpine/base
     username: ${REPO_USERNAME}
