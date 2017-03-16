@@ -1,10 +1,7 @@
 pipeline:
   docker:
     image: plugins/docker
-    repo: registry.tstllc.net/alpine/base
-    username: ${REPO_USERNAME}
-    password: ${REPO_PASSWORD}
-    registry: registry.tstllc.net
+    repo: docker.infra.tstllc.net/alpine/base
     tag:
       - latest
       - '${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}'
