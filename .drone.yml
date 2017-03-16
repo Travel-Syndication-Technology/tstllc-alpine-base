@@ -4,25 +4,22 @@ pipeline:
     repo: registry.tstllc.net/alpine/base
     username: ${REPO_USERNAME}
     password: ${REPO_PASSWORD}
-    email: ${REPO_EMAILADDR}
     registry: registry.tstllc.net
-    storage_driver: overlay
     tag:
       - latest
       - '${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}'
     when:
       branch:
         include: [ master, release/* ]
-  docker:
-    repo: registry.tstllc.net/alpine/base
-    username: ${REPO_USERNAME}
-    password: ${REPO_PASSWORD}
-    email: ${REPO_EMAILADDR}
-    registry: registry.tstllc.net
-    storage_driver: overlay
-    tag:
-      - ${DRONE_BRANCH}-latest
-      - ${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}
-    when:
-      branch:
-        exclude: [ master ]
+#  docker:
+#    repo: registry.tstllc.net/alpine/base
+#    username: ${REPO_USERNAME}
+#    password: ${REPO_PASSWORD}
+#    registry: registry.tstllc.net
+#    storage_driver: overlay
+#    tag:
+#      - ${DRONE_BRANCH}-latest
+#      - ${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}
+#    when:
+#      branch:
+#        exclude: [ master ]
